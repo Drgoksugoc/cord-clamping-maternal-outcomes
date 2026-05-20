@@ -1,0 +1,166 @@
+Public dataset inspection summary
+Generated from: data/PPH_CordClamping.csv
+De-identification note: the public dataset uses month-resolution calendar fields and does not include the prior day-resolution delivery_date_iso field.
+
+Rows: 4644
+Columns: 70
+
+Calendar-time columns present:
+- delivery_month: True
+- delivery_year_quarter: True
+- delivery_month_numeric: True
+- delivery_year: True
+
+Privacy-oriented header checks:
+- delivery_date_iso: False
+- delivery_date: False
+- name: False
+- phone: False
+- telephone: False
+- email: False
+- address: False
+- medical_record_number: False
+
+Column names:
+- study_id
+- delivery_month
+- delivery_year_quarter
+- delivery_month_numeric
+- delivery_year
+- anemia_status
+- anemia_severity
+- pre_delivery_hemoglobin_g_dl
+- postpartum_6h_hemoglobin_g_dl
+- hemoglobin_drop_g_dl
+- hemoglobin_drop_recalculated_g_dl
+- hemoglobin_drop_difference_recorded_vs_recalculated_g_dl
+- postpartum_anemia_hb_lt_10
+- postpartum_anemia_hb_lt_10_binary
+- postpartum_anemia_hb_lt_11
+- postpartum_anemia_hb_lt_11_binary
+- weight_kg
+- height_cm
+- body_mass_index_kg_m2
+- parity
+- gravidity_group
+- grand_multiparity
+- grand_multiparity_binary
+- number_of_fetuses
+- plurality_group
+- maternal_comorbidity
+- maternal_comorbidity_raw_text_removed
+- pregnancy_complication
+- pregnancy_complication_raw_text_removed
+- iron_use_during_pregnancy
+- iron_use_during_pregnancy_binary
+- iv_ferric_carboxymaltose_use_during_pregnancy
+- iv_ferric_carboxymaltose_use_during_pregnancy_binary
+- hemoglobin_before_iv_iron_g_dl
+- delivery_mode
+- vaginal_delivery_subtype
+- cesarean_indication
+- cesarean_indication_raw_text_removed
+- cord_clamping_group
+- cord_clamping_delay_seconds
+- cord_clamping_guideline_category
+- guideline_delayed_cord_clamping_ge_60s
+- guideline_delayed_cord_clamping_ge_60s_binary
+- any_delayed_cord_clamping_ge_30s
+- any_delayed_cord_clamping_ge_30s_binary
+- immediate_cord_clamping
+- immediate_cord_clamping_binary
+- cord_clamping_delayed_30s
+- cord_clamping_delayed_30s_binary
+- cord_clamping_delayed_60s
+- cord_clamping_delayed_60s_binary
+- cord_clamping_delayed_120s
+- cord_clamping_delayed_120s_binary
+- uterotonic_agent
+- additional_uterotonic_used
+- additional_uterotonic_used_binary
+- additional_uterotonic_type
+- additional_surgical_suture_used
+- additional_surgical_suture_used_binary
+- surgical_suture_type
+- postpartum_hemorrhage
+- postpartum_hemorrhage_binary
+- blood_transfusion_needed
+- blood_transfusion_needed_binary
+- blood_transfusion_components
+- qc_vaginal_delivery_with_source_cesarean_indication
+- qc_unclear_uterotonic_agent
+- qc_missing_or_invalid_delivery_date
+- qc_cord_clamping_indicator_mismatch
+- qc_cord_clamping_indicator_mismatch_fields
+
+Missingness by variable:
+- study_id: 0 missing (0.00%)
+- delivery_month: 13 missing (0.28%)
+- delivery_year_quarter: 13 missing (0.28%)
+- delivery_month_numeric: 13 missing (0.28%)
+- delivery_year: 12 missing (0.26%)
+- anemia_status: 0 missing (0.00%)
+- anemia_severity: 0 missing (0.00%)
+- pre_delivery_hemoglobin_g_dl: 0 missing (0.00%)
+- postpartum_6h_hemoglobin_g_dl: 0 missing (0.00%)
+- hemoglobin_drop_g_dl: 0 missing (0.00%)
+- hemoglobin_drop_recalculated_g_dl: 0 missing (0.00%)
+- hemoglobin_drop_difference_recorded_vs_recalculated_g_dl: 0 missing (0.00%)
+- postpartum_anemia_hb_lt_10: 0 missing (0.00%)
+- postpartum_anemia_hb_lt_10_binary: 0 missing (0.00%)
+- postpartum_anemia_hb_lt_11: 0 missing (0.00%)
+- postpartum_anemia_hb_lt_11_binary: 0 missing (0.00%)
+- weight_kg: 0 missing (0.00%)
+- height_cm: 0 missing (0.00%)
+- body_mass_index_kg_m2: 0 missing (0.00%)
+- parity: 0 missing (0.00%)
+- gravidity_group: 0 missing (0.00%)
+- grand_multiparity: 0 missing (0.00%)
+- grand_multiparity_binary: 0 missing (0.00%)
+- number_of_fetuses: 0 missing (0.00%)
+- plurality_group: 0 missing (0.00%)
+- maternal_comorbidity: 0 missing (0.00%)
+- maternal_comorbidity_raw_text_removed: 0 missing (0.00%)
+- pregnancy_complication: 0 missing (0.00%)
+- pregnancy_complication_raw_text_removed: 0 missing (0.00%)
+- iron_use_during_pregnancy: 0 missing (0.00%)
+- iron_use_during_pregnancy_binary: 0 missing (0.00%)
+- iv_ferric_carboxymaltose_use_during_pregnancy: 0 missing (0.00%)
+- iv_ferric_carboxymaltose_use_during_pregnancy_binary: 0 missing (0.00%)
+- hemoglobin_before_iv_iron_g_dl: 4628 missing (99.66%)
+- delivery_mode: 0 missing (0.00%)
+- vaginal_delivery_subtype: 0 missing (0.00%)
+- cesarean_indication: 0 missing (0.00%)
+- cesarean_indication_raw_text_removed: 0 missing (0.00%)
+- cord_clamping_group: 0 missing (0.00%)
+- cord_clamping_delay_seconds: 0 missing (0.00%)
+- cord_clamping_guideline_category: 0 missing (0.00%)
+- guideline_delayed_cord_clamping_ge_60s: 0 missing (0.00%)
+- guideline_delayed_cord_clamping_ge_60s_binary: 0 missing (0.00%)
+- any_delayed_cord_clamping_ge_30s: 0 missing (0.00%)
+- any_delayed_cord_clamping_ge_30s_binary: 0 missing (0.00%)
+- immediate_cord_clamping: 0 missing (0.00%)
+- immediate_cord_clamping_binary: 0 missing (0.00%)
+- cord_clamping_delayed_30s: 0 missing (0.00%)
+- cord_clamping_delayed_30s_binary: 0 missing (0.00%)
+- cord_clamping_delayed_60s: 0 missing (0.00%)
+- cord_clamping_delayed_60s_binary: 0 missing (0.00%)
+- cord_clamping_delayed_120s: 0 missing (0.00%)
+- cord_clamping_delayed_120s_binary: 0 missing (0.00%)
+- uterotonic_agent: 0 missing (0.00%)
+- additional_uterotonic_used: 0 missing (0.00%)
+- additional_uterotonic_used_binary: 0 missing (0.00%)
+- additional_uterotonic_type: 0 missing (0.00%)
+- additional_surgical_suture_used: 1 missing (0.02%)
+- additional_surgical_suture_used_binary: 1 missing (0.02%)
+- surgical_suture_type: 0 missing (0.00%)
+- postpartum_hemorrhage: 0 missing (0.00%)
+- postpartum_hemorrhage_binary: 0 missing (0.00%)
+- blood_transfusion_needed: 2 missing (0.04%)
+- blood_transfusion_needed_binary: 2 missing (0.04%)
+- blood_transfusion_components: 0 missing (0.00%)
+- qc_vaginal_delivery_with_source_cesarean_indication: 0 missing (0.00%)
+- qc_unclear_uterotonic_agent: 0 missing (0.00%)
+- qc_missing_or_invalid_delivery_date: 0 missing (0.00%)
+- qc_cord_clamping_indicator_mismatch: 0 missing (0.00%)
+- qc_cord_clamping_indicator_mismatch_fields: 4637 missing (99.85%)

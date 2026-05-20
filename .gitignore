@@ -1,0 +1,25 @@
+# Operating-system and editor files
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+~$*.docx
+
+# R session and project artifacts
+.Rhistory
+.RData
+.Ruserdata
+.Rproj.user/
+
+# Local temporary outputs and caches
+*.tmp
+*.temp
+__pycache__/
+*.py[cod]
+
+# Private submission correspondence and disclosures should not be committed
+01_Cover_Letter.docx
+*Cover_Letter*.docx
+*Conflict*.pdf
+*Disclosure*.pdf
+ICMJE*/

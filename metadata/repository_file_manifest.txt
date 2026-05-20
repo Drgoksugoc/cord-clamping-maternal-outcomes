@@ -1,0 +1,27 @@
+Repository file manifest
+Generated: 2026-05-20T13:20:00Z
+Repository purpose: Public journal-agnostic reproducibility package with month-resolution de-identified data
+
+.gitignore	385 bytes
+CITATION.cff	1891 bytes
+DATA_DICTIONARY.md	12370 bytes
+LICENSE	1068 bytes
+LICENSE-data	1285 bytes
+NOTICE.md	2079 bytes
+README.md	7339 bytes
+REPRODUCIBILITY_NOTE.md	3171 bytes
+analysis/PPH_CordClamping_statistical_script.R	56523 bytes
+analysis/README.md	869 bytes
+analysis_outputs/README.md	962 bytes
+analysis_outputs/analysis_outputs_cord_clamping_v14.zip	835488 bytes
+data/PPH_CordClamping.csv	2161547 bytes
+data/README.md	555 bytes
+documents/03_Main_Manuscript.docx	39695 bytes
+documents/06_Supplementary_Materials.docx	39560 bytes
+documents/09_STROBE_Checklist.docx	38563 bytes
+documents/README.md	710 bytes
+metadata/archive_listing.txt	377 bytes
+metadata/data_profile.csv	3470 bytes
+metadata/dataset_inspection.txt	6161 bytes
+metadata/generate_data_dictionary.py	8416 bytes
+metadata/repository_file_manifest.txt	1014 bytes

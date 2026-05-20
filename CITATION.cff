@@ -1,0 +1,47 @@
+cff-version: 1.2.0
+message: "If you use this repository, please cite the manuscript and dataset."
+title: "Delayed umbilical cord clamping and postpartum maternal outcomes: a calendar-time-adjusted observational cohort study"
+authors:
+  - family-names: "Aynaoğlu Yıldız"
+    given-names: "Gülşah"
+    orcid: "https://orcid.org/0000-0002-3283-7783"
+  - family-names: "Goc"
+    given-names: "Goksu"
+    orcid: "https://orcid.org/0009-0003-1506-6061"
+  - family-names: "Süt"
+    given-names: "Hasan"
+    orcid: "https://orcid.org/0000-0003-0982-3356"
+  - family-names: "Turgay"
+    given-names: "Batuhan"
+    orcid: "https://orcid.org/0000-0001-9927-181X"
+  - family-names: "Yıldırım Baydemir"
+    given-names: "Bircan"
+    orcid: "https://orcid.org/0000-0002-6950-7614"
+  - family-names: "Öztürk"
+    given-names: "Engin"
+    orcid: "https://orcid.org/0000-0002-6159-2009"
+  - family-names: "Atabekoğlu"
+    given-names: "Cem Somer"
+    orcid: "https://orcid.org/0000-0003-0264-0709"
+year: 2026
+type: dataset
+url: "https://github.com/Drgoksugoc/cord-clamping-maternal-outcomes"
+repository-code: "https://github.com/Drgoksugoc/cord-clamping-maternal-outcomes"
+abstract: >
+  Public reproducibility repository for an observational cohort study evaluating
+  delayed umbilical cord clamping (≥60 seconds) and early postpartum maternal
+  haematological outcomes. The package includes a de-identified analysis dataset
+  with calendar time represented at month resolution, the full R statistical
+  analysis pipeline, archived analysis outputs, a variable-level data dictionary
+  and the STROBE reporting checklist.
+keywords:
+  - delayed cord clamping
+  - postpartum anaemia
+  - postpartum haemorrhage
+  - propensity score
+  - inverse probability weighting
+  - observational cohort
+  - maternal outcomes
+  - causal inference
+license: MIT
+license-url: "https://opensource.org/licenses/MIT"
