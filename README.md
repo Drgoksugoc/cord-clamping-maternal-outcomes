@@ -1,5 +1,7 @@
 # Delayed Umbilical Cord Clamping and Postpartum Maternal Outcomes
 
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.20315727.svg)](https://doi.org/10.5281/zenodo.20315727)
+
 A public reproducibility package for the study **"Delayed umbilical cord clamping and postpartum maternal outcomes: a calendar-time-adjusted observational cohort study."** It contains the publication-ready de-identified analysis dataset, the full R statistical analysis script, archived analysis outputs, and supporting documentation needed to review and reproduce the analyses.
 
 The study evaluates whether guideline-concordant delayed umbilical cord clamping — defined as clamping at **60 seconds or later** — is associated with early postpartum maternal haematological outcomes (postpartum anaemia, haemoglobin drop, postpartum haemorrhage and transfusion) in a single-centre retrospective cohort. The analytic approach combines calendar-time adjustment via natural cubic splines with four complementary regression and propensity-score methods (covariate-adjusted modified Poisson regression, inverse-probability-of-treatment weighting, overlap weighting and 1:1 propensity-score matching) to address implementation-era confounding.
@@ -28,7 +30,7 @@ The dataset is publication-ready and de-identified. It contains a repository-spe
 
 A suggested data-availability statement for any manuscript drawing on this repository:
 
-> The data, statistical code and reproducibility materials that support the findings of this study are openly available in the GitHub repository at `https://github.com/Drgoksugoc/cord-clamping-maternal-outcomes`. The repository contains a de-identified analysis dataset with calendar time represented at month resolution, the statistical analysis code, a variable-level data dictionary, and archived analysis outputs.
+> The de-identified analysis dataset, statistical code and reproducibility materials that support the findings of this study are openly available on Zenodo at `https://doi.org/10.5281/zenodo.20315727`. The archived package contains a de-identified analysis dataset with calendar time represented at month resolution, the statistical analysis code, a variable-level data dictionary, archived analysis outputs, and the linked public GitHub repository for version-controlled code review.
 
 This is an observational cohort study reported in accordance with the STROBE guideline; the completed checklist is included in `documents/09_STROBE_Checklist.docx`.
 
@@ -48,13 +50,13 @@ Because exact delivery dates are intentionally not included in the public datase
 
 ## Citing this repository
 
-If you use this repository, please cite the manuscript together with the repository:
+If you use this repository, please cite the manuscript together with the archived reproducibility package:
 
-> Aynaoğlu Yıldız G, Goc G, Süt H, Turgay B, Yıldırım Baydemir B, Öztürk E, Atabekoğlu CS. **Delayed umbilical cord clamping and postpartum maternal outcomes: a calendar-time-adjusted observational cohort study.** Reproducibility repository, 2026. `https://github.com/Drgoksugoc/cord-clamping-maternal-outcomes`.
+> Aynaoğlu Yıldız G, Goc G, Süt H, Turgay B, Yıldırım Baydemir B, Öztürk E, Atabekoğlu CS. **Delayed umbilical cord clamping and postpartum maternal outcomes: a calendar-time-adjusted observational cohort study.** Reproducibility repository, 2026. `https://doi.org/10.5281/zenodo.20315727`.
 
 A dataset-style citation:
 
-> [dataset] Aynaoğlu Yıldız G, Goc G, Süt H, Turgay B, Yıldırım Baydemir B, Öztürk E, Atabekoğlu CS. 2026. *Delayed umbilical cord clamping and postpartum maternal outcomes: de-identified analysis dataset and reproducibility package.* GitHub. `https://github.com/Drgoksugoc/cord-clamping-maternal-outcomes`.
+> [dataset] Aynaoğlu Yıldız G, Goc G, Süt H, Turgay B, Yıldırım Baydemir B, Öztürk E, Atabekoğlu CS. 2026. *Delayed umbilical cord clamping and postpartum maternal outcomes: de-identified analysis dataset and reproducibility package.* Zenodo. `https://doi.org/10.5281/zenodo.20315727`.
 
 A machine-readable citation block is provided in `CITATION.cff`.
 
