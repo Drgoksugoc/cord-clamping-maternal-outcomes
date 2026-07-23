@@ -2,23 +2,21 @@
 
 This data dictionary describes the publication-ready, de-identified dataset used in the cord-clamping maternal-outcomes analysis. The table reports the variable name, a concise description, the type inferred from the CSV file, missingness counts, and representative example values.
 
-The dataset contains **4,644 rows** and **70 variables**.
+The dataset contains **4,644 rows** and **68 variables**.
 
-## Calendar-time variables (month resolution)
+## Calendar-time variables
 
-To reduce re-identification risk in a single-centre obstetric cohort, the original day-resolution `delivery_date_iso` field has been removed. Calendar time is represented at month resolution by three derived variables: `delivery_month` (YYYY-MM), `delivery_year_quarter` (YYYY-Qn) and `delivery_month_numeric` (months since the study-start anchor 2022-06). The R analysis script uses `delivery_month_numeric` as the term in the natural cubic spline.
+This version of the dataset includes the day-resolution `delivery_date_iso` field (in M/D/YYYY format) and the derived `delivery_year` variable. The R analysis script (v16.4) parses `delivery_date_iso` internally for calendar-time adjustment via natural cubic splines.
 
-Twelve records (originally) had missing or unparseable delivery dates, and one further record had a year outlier (2002 — confirmed to be a data-entry typo). These 13 records are flagged via `qc_missing_or_invalid_delivery_date = Yes` and excluded from calendar-adjusted models. The unadjusted analysis cohort therefore numbers 4,644; the calendar-adjusted cohort numbers 4,631.
+One record (PCC_04411) carries a source-level date typo (`11/17/2002`) that is documented and corrected to 2022 in the analysis script. The `delivery_year` column already reflects the corrected year (2022). Twelve records have missing delivery dates and are flagged via `qc_missing_or_invalid_delivery_date = Yes` and excluded from calendar-adjusted models. The unadjusted analysis cohort therefore numbers 4,644; the calendar-adjusted cohort numbers 4,632.
 
 ## Variable inventory
 
 | Variable | Description | Type | Non-missing | Missing | Unique values | Example values |
 | --- | --- | --- | --- | --- | --- | --- |
 | `study_id` | Repository-specific study identifier; no direct patient identifiers are included. | `str` | 4,644 | 0 | 4644 | PCC_00001; PCC_00002; PCC_00003; PCC_00004; PCC_00005 |
-| `delivery_month` | Month of delivery in YYYY-MM format. Coarsened from the original day-resolution date for re-identification protection. | `str` | 4,631 | 13 | 31 | 2024-02; 2023-07; 2023-12; 2024-06; 2023-11 |
-| `delivery_year_quarter` | Quarter of delivery in YYYY-Qn format. Coarsened from the original day-resolution date. | `str` | 4,631 | 13 | 11 | 2024-Q1; 2023-Q3; 2023-Q4; 2024-Q2; 2024-Q4 |
-| `delivery_month_numeric` | Months elapsed since the study-start anchor (2022-06 = 0). Used as the calendar-time term in the natural cubic spline. | `int64` | 4,631 | 13 | 31 | 20; 13; 18; 24; 17 |
-| `delivery_year` | Calendar year of delivery. | `int64` | 4,632 | 12 | 4 | 2024; 2023; 2022; 2002 |
+| `delivery_date_iso` | Delivery date in M/D/YYYY format. One record (PCC_04411) carries a source-level typo (2002 instead of 2022), corrected in the analysis script. | `str` | 4,632 | 12 | — | 2/5/2024; 7/31/2023; 12/18/2023; 6/10/2024 |
+| `delivery_year` | Calendar year of delivery (corrected: PCC_04411 mapped to 2022). | `int` | 4,632 | 12 | 3 | 2024; 2023; 2022 |
 | `anemia_status` | Pre-delivery anaemia status category. | `str` | 4,644 | 0 | 2 | Anemic; Non-anemic |
 | `anemia_severity` | Pre-delivery anaemia severity category. | `str` | 4,644 | 0 | 4 | Mild anemia; Moderate anemia; No anemia; Severe anemia |
 | `pre_delivery_hemoglobin_g_dl` | Pre-delivery haemoglobin concentration in g/dL. | `float64` | 4,644 | 0 | 83 | 9.6; 8.9; 15.3; 12.1; 13.7 |
@@ -41,7 +39,7 @@ Twelve records (originally) had missing or unparseable delivery dates, and one f
 | `plurality_group` | Pregnancy plurality category. | `str` | 4,644 | 0 | 2 | Singleton; Multiple pregnancy |
 | `maternal_comorbidity` | Maternal comorbidity category; raw free text has been removed. | `str` | 4,644 | 0 | 102 | Placental or fetal condition; Thyroid disease; None recorded; Hypertensive disorder; Autoimmune or rheumatologic disease |
 | `maternal_comorbidity_raw_text_removed` | Flag documenting removal of raw maternal-comorbidity free text. | `str` | 4,644 | 0 | 2 | Yes; No |
-| `pregnancy_complication` | Pregnancy complication category; raw free text has been removed. | `str` | 4,644 | 0 | 25 | None recorded; Hypertensive disorder; Amniotic fluid disorder; Fetal growth abnormality; Other specified pregnancy complication; Fetal growth abnormality |
+| `pregnancy_complication` | Pregnancy complication category; raw free text has been removed. | `str` | 4,644 | 0 | 25 | None recorded; Hypertensive disorder; Amniotic fluid disorder; Fetal growth abnormality; Other specified pregnancy complication |
 | `pregnancy_complication_raw_text_removed` | Flag documenting removal of raw pregnancy-complication free text. | `str` | 4,644 | 0 | 2 | No; Yes |
 | `iron_use_during_pregnancy` | Iron-use category during pregnancy. | `str` | 4,644 | 0 | 2 | Yes; No |
 | `iron_use_during_pregnancy_binary` | Binary iron-use indicator during pregnancy. | `int64` | 4,644 | 0 | 2 | 1; 0 |
@@ -78,13 +76,13 @@ Twelve records (originally) had missing or unparseable delivery dates, and one f
 | `postpartum_hemorrhage_binary` | Binary clinically recorded postpartum haemorrhage indicator. | `int64` | 4,644 | 0 | 2 | 0; 1 |
 | `blood_transfusion_needed` | Blood transfusion category during the delivery admission. | `str` | 4,642 | 2 | 2 | No; Yes |
 | `blood_transfusion_needed_binary` | Binary blood-transfusion indicator. | `int64` | 4,642 | 2 | 2 | 0; 1 |
-| `blood_transfusion_components` | Blood-transfusion component category, where applicable. | `str` | 4,644 | 0 | 14 | None recorded; 2 units packed red blood cells; 2 units fresh frozen plasma; 2 units fresh frozen plasma; 27 units packed red blood cells; 2 units packed red blood cells |
+| `blood_transfusion_components` | Blood-transfusion component category, where applicable. | `str` | 4,644 | 0 | 14 | None recorded; 2 units packed red blood cells; 2 units fresh frozen plasma |
 | `qc_vaginal_delivery_with_source_cesarean_indication` | Quality-control flag for vaginal delivery with a source caesarean indication. | `str` | 4,644 | 0 | 2 | No; Yes |
 | `qc_unclear_uterotonic_agent` | Quality-control flag for unclear uterotonic agent. | `str` | 4,644 | 0 | 2 | No; Yes |
 | `qc_missing_or_invalid_delivery_date` | Quality-control flag for missing or invalid delivery date. Records with this flag = Yes are excluded from calendar-adjusted analyses. | `str` | 4,644 | 0 | 2 | No; Yes |
 | `qc_cord_clamping_indicator_mismatch` | Quality-control flag for mismatch among cord-clamping indicators. | `str` | 4,644 | 0 | 2 | No; Yes |
-| `qc_cord_clamping_indicator_mismatch_fields` | Quality-control details for cord-clamping indicator mismatch fields. | `str` | 7 | 4637 | 3 | cord_clamping_delayed_60s_binary; cord_clamping_delayed_30s_binary; cord_clamping_delayed_30s_binary; cord_clamping_delayed_60s_binary |
+| `qc_cord_clamping_indicator_mismatch_fields` | Quality-control details for cord-clamping indicator mismatch fields. | `str` | 7 | 4637 | 3 | cord_clamping_delayed_60s_binary; cord_clamping_delayed_30s_binary |
 
 ## De-identification note
 
-The dataset contains a repository-specific study identifier and analysis variables. Raw free-text fields for maternal comorbidities, pregnancy complications and caesarean indications are represented only through removal flags or standardised categorical variables, as documented in the variable names. The original day-resolution delivery-date field has been removed and replaced with month-resolution variables. Subjects with year outliers identified during the public-release audit (notably a single 2002 entry, confirmed as a transcription error from a 2022 date) have been flagged through `qc_missing_or_invalid_delivery_date` and excluded from calendar-adjusted models.
+The dataset contains a repository-specific study identifier and analysis variables. Raw free-text fields for maternal comorbidities, pregnancy complications and caesarean indications are represented only through removal flags or standardised categorical variables, as documented in the variable names. This version includes the day-resolution delivery date (`delivery_date_iso`) to support full reproducibility of calendar-time-adjusted models. One record (PCC_04411) carries a known source-level date typo (year recorded as 2002 instead of 2022), which is documented and corrected in the analysis script.

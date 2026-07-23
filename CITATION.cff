@@ -28,15 +28,15 @@ type: dataset
 doi: "10.5281/zenodo.20315727"
 url: "https://doi.org/10.5281/zenodo.20315727"
 repository-code: "https://github.com/Drgoksugoc/cord-clamping-maternal-outcomes"
-version: "1.0.0"
-date-released: "2026-05-20"
+version: "2.0.0"
+date-released: "2026-07-23"
 abstract: >
   Public reproducibility repository for an observational cohort study evaluating
   delayed umbilical cord clamping (≥60 seconds) and early postpartum maternal
   haematological outcomes. The package includes a de-identified analysis dataset
-  with calendar time represented at month resolution, the full R statistical
-  analysis pipeline, archived analysis outputs, a variable-level data dictionary
-  and the STROBE reporting checklist.
+  with day-resolution delivery dates, the full R statistical analysis pipeline
+  (v16.4), archived analysis outputs, a variable-level data dictionary and the
+  STROBE reporting checklist.
 keywords:
   - delayed cord clamping
   - postpartum anaemia
